@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMI Calculator</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <script src="./js/index.js" type="module" defer></script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <div class="error">
+    <p>Type only numbers</p>
+  </div>
+
+
+  <div class="wrapper">
+    <section class="content">
+
+      <!-- modal -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times</span>
+          <p id="modalText"></p>
+        </div>
+      </div>
+      <!-- end modal -->
+
+      <div class="title">
+        <p>BMI Calculator</p>
+      </div>
+
+      <form>
+        <label for="weight">Weight (kg)
+          <input placeholder="60" id="weight" min="0" >
+        </label>
+
+        <label for="height">Height(cm)
+          <input placeholder="165" id="height" min="0" step="1">
+        </label>
+
+        <input type="submit" id="button" value="Calculate BMI &rarr;">
+      </form>
+    </section>
+  </div>
+</body>
+</html> 

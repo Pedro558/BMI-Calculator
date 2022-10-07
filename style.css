@@ -1,0 +1,193 @@
+:root{
+  --bg-grad: linear-gradient(120deg, #ff6b6b, #5f27cd);
+  --bg-grad-hover: linear-gradient(120deg, #fc4343, #400ea5);
+  --bg-wrapper: #fff;
+  --bg-input: #DCE2E9;
+  --bg-error: #F03E3E;
+
+  --ff-text: 'Roboto', 'sans serif';
+
+  --fs-title: 3.2rem;
+  --fs-label: 1.4rem;
+  --fs-button: 1.6rem;
+
+  --fc-title: #0C3440;
+  --fc-label: #00453A;
+  --fc-button: #fff;
+
+  font-size: 62.5%;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3,1fr);
+  font-family: var(--ff-text);
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-grad);
+}
+
+.wrapper{
+  grid-area: 2/2/3/3;
+  width: clamp(28rem, 20rem + 20vw, 43rem);
+  height: 44rem;
+  background-color: var(--bg-wrapper);
+  color: black;
+  border-radius: 6px;
+  box-shadow: 1px 1px 20px #ee5253;
+  padding: 48px 64px 64px;
+}
+
+.content{
+  width: 100%;
+  height: 31rem;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  
+}
+
+.title{
+  color: var(--fc-title);
+  font-size: var(--fs-title);
+  line-height: 40px;
+  font-weight: 700;
+  text-align: center;
+}
+
+form{
+  display: flex;
+  height: 24rem;
+  flex-direction: column;
+  gap: 16px;
+}
+
+label{
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: var(--fc-label);
+  font-size: var(--fs-label);
+  background-color: var();
+}
+
+#height, #weight{
+  color: var(--fc-label);
+  background-color: var(--bg-input);
+  font-size: var(--fs-button);
+  height: 52px;
+  
+  border:1px solid #7399a5;
+  border-radius: 4px;
+  padding: 16px; 
+}
+
+#button{
+  margin-top: 8px;
+  height: 52px;
+  background: var(--bg-grad);
+  color: var(--fc-button);
+  font-size: var(--fs-button);
+  border: none;
+  line-height: 20px;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+#button:hover{
+  background: var(--bg-grad-hover);
+}
+
+.error{
+  /* My way */
+  visibility: hidden;
+  grid-area: 1/1/2/4;
+  height: 36px;
+  background-color: var(--bg-error);
+  color: var(--fc-button);
+  text-align: center;
+  font-size: var(--fs-button);
+  padding: 8px;
+  transform: translateY(-30px);
+  transition: transform 1s;
+
+  /* Mayk's way */
+  /*position: absolute;
+  background-color: var(--bg-error);
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-weight: bold;
+  font-size: var(--fs-button);
+  color: var(--fc-button);
+  padding: .8rem 0;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: transform .5s;*/
+
+}
+
+.open{
+  visibility: visible;
+  display: block;
+  transform: translateY(0);
+}
+
+.modal{
+  display: none;
+  position: fixed; 
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0,0,0); 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content{
+  background-color: var(--bg-wrapper);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 10px;
+  border: 1px solid #888;
+  width: 363px;
+  height: 152px;
+}
+
+#modalText{
+  font-family: var(--ff-text);
+  font-weight: 700;
+  font-size: var(--fs-title);
+  line-height: 40px;
+  text-align: center;
+  color: var(--fc-title);
+  padding: 40px;
+}
+
+.close{
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus{
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
